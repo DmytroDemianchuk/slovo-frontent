@@ -1,0 +1,15 @@
+version: '3'
+services:
+  vue-app:
+    build: ./client
+    container_name: vue-app
+    restart: always
+    
+    ports:
+      - "80:8080"
+    networks:
+      - vue-network
+
+networks:
+  vue-network:
+    driver: bridge
